@@ -11,12 +11,12 @@ class Question extends Model
 
 //Defining of the Table Relation
     public function users(){
-    	return $this->belongTo(Question::class);
+    	return $this->belongsTo(User::class);
     }
 
  //Define the mutators 
-    public function setAttributes ($value){
+    public function setTitleAttribute($value){
     	$this->attributes['title']= $value;
-    	$this->attributes['slug']=str_slug('$value');
+    	$this->attributes['slug']=str_slug($value);
     }
 }

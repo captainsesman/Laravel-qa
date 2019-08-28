@@ -21,7 +21,7 @@ class User extends Authenticatable
 
 
     public function questions(){
-        return $this->hasMany(User::class);
+        return $this->hasMany(Question::class);
     }
     /**
      * The attributes that should be hidden for arrays.
