@@ -31,6 +31,16 @@ class User extends Authenticatable
     public function getUrlAttribute(){
         return '#';
     }
+
+
+    public function getAvatarAttribute(){
+        $email = $this->email;        
+        $size = 32;
+        return  "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?s=" . $size;
+
+    }
+
+
     /**
      * The attributes that should be hidden for arrays.
      *
